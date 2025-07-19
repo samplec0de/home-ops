@@ -20,8 +20,8 @@ cniConfig:
   name: none
 
 nodes:
-  - hostname: "talos-0"
-    ipAddress: "10.0.48.99"
+  - hostname: "talos-cp"
+    ipAddress: "10.0.48.128"
     installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
@@ -29,111 +29,101 @@ nodes:
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "bc:24:11:fd:f5:a2"
+          hardwareAddr: "bc:24:11:ad:cf:6f"
         dhcp: false
         addresses:
-          - "10.0.48.99/16"
+          - "10.0.48.128/16"
         routes:
           - network: "0.0.0.0/0"
             gateway: "10.0.0.1"
         mtu: 1500
         vip:
           ip: "10.0.48.24"
-  - hostname: "talos-1"
-    ipAddress: "10.0.48.100"
+  - hostname: "talos-worker-1"
+    ipAddress: "10.0.48.77"
     installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/5650e59c9e7df58be206d06b79c5ea2d5f7b6866277c27edcf6fe7c8783437c4
-    controlPlane: true
+    controlPlane: false
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "bc:24:11:c3:35:a2"
+          hardwareAddr: "bc:24:11:9e:99:39"
         dhcp: false
         addresses:
-          - "10.0.48.100/16"
+          - "10.0.48.77/16"
         routes:
           - network: "0.0.0.0/0"
             gateway: "10.0.0.1"
         mtu: 1500
-        vip:
-          ip: "10.0.48.24"
-  - hostname: "talos-2"
-    ipAddress: "10.0.48.58"
+  - hostname: "talos-worker-2"
+    ipAddress: "10.0.48.104"
     installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/5650e59c9e7df58be206d06b79c5ea2d5f7b6866277c27edcf6fe7c8783437c4
-    controlPlane: true
+    controlPlane: false
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "bc:24:11:42:23:a9"
+          hardwareAddr: "bc:24:11:c4:aa:5a"
         dhcp: false
         addresses:
-          - "10.0.48.58/16"
+          - "10.0.48.104/16"
         routes:
           - network: "0.0.0.0/0"
             gateway: "10.0.0.1"
         mtu: 1500
-        vip:
-          ip: "10.0.48.24"
-  - hostname: "talos-3"
-    ipAddress: "10.0.96.102"
+  - hostname: "talos-worker-3"
+    ipAddress: "10.0.96.150"
     installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/5650e59c9e7df58be206d06b79c5ea2d5f7b6866277c27edcf6fe7c8783437c4
-    controlPlane: true
+    controlPlane: false
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "bc:24:11:eb:b4:24"
+          hardwareAddr: "bc:24:11:ee:d3:35"
         dhcp: false
         addresses:
-          - "10.0.96.102/16"
+          - "10.0.96.150/16"
         routes:
           - network: "0.0.0.0/0"
             gateway: "10.0.0.1"
         mtu: 1500
-        vip:
-          ip: "10.0.48.24"
-  - hostname: "talos-4"
-    ipAddress: "10.0.96.147"
+  - hostname: "talos-worker-4"
+    ipAddress: "10.0.96.70"
     installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/5650e59c9e7df58be206d06b79c5ea2d5f7b6866277c27edcf6fe7c8783437c4
-    controlPlane: true
+    controlPlane: false
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "bc:24:11:6e:7e:52"
+          hardwareAddr: "bc:24:11:79:30:dd"
         dhcp: false
         addresses:
-          - "10.0.96.147/16"
+          - "10.0.96.70/16"
         routes:
           - network: "0.0.0.0/0"
             gateway: "10.0.0.1"
         mtu: 1500
-        vip:
-          ip: "10.0.48.24"
-  - hostname: "talos-5"
-    ipAddress: "10.0.96.65"
+  - hostname: "talos-worker-5"
+    ipAddress: "10.0.96.109"
     installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/5650e59c9e7df58be206d06b79c5ea2d5f7b6866277c27edcf6fe7c8783437c4
-    controlPlane: true
+    controlPlane: false
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "bc:24:11:69:8f:c8"
+          hardwareAddr: "bc:24:11:6c:48:d4"
         dhcp: false
         addresses:
-          - "10.0.96.65/16"
+          - "10.0.96.109/16"
         routes:
           - network: "0.0.0.0/0"
             gateway: "10.0.0.1"
         mtu: 1500
-        vip:
-          ip: "10.0.48.24"
 
 # Global patches
 patches:
